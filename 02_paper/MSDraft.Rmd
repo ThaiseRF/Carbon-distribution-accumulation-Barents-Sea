@@ -1,0 +1,149 @@
+---
+title: "A template for writing manuscripts in Rmarkdown"
+
+author: Thaise Ricardo de Freitas^1^*, Elisabeth Alve^1^, Silvia Hess^1^, Paul Renaud^2,3^
+
+# date: `r Sys.Date()`
+
+output:
+  bookdown::word_document2:
+    fig_caption: yes
+    fig_width: 7
+    fig_height: 7
+    df_print: kable
+    keep_md: yes
+    number_sections: no
+    toc: no
+    reference_docx: templates/Word_template.docx
+    
+csl: templates/ecology.csl
+# csl: https://www.zotero.org/styles/ecology
+bibliography: references.bib
+---
+
+^1^ Department of Geosciences, University of Oslo, PO Box 1047 Blindern, 0316 Oslo, Norway
+
+^2^ Akvaplan-niva, Fram Centre for Climate and the Environment, 9296 Tromsø, Norway
+
+^3^ University Centre on Svalbard, 9171 Longyearbyen, Norway
+
+`*` Corresponding author: [thaiser\@uio.no](mailto:thaiser@uio.no){.email}
+
+# ABSTRACT
+
+Write your abstract here.
+
+*Keywords*: Rmarkdown, reproducible science
+
+```{r setup, include= FALSE, cache=FALSE, message = FALSE}
+library("knitr")
+library("flextable")
+library("readxl")
+
+### Chunk options: see http://yihui.name/knitr/options/ ###
+## Text results
+opts_chunk$set(echo = FALSE, warning = TRUE, message = TRUE)
+
+## Code decoration
+opts_chunk$set(tidy = TRUE, comment = NA, highlight = TRUE)
+
+## Cache
+# opts_chunk$set(cache = 2, cache.path = "output/cache/")
+
+## Plots
+opts_chunk$set(fig.path = "../03_figures/", dpi = 300)
+
+```
+
+# INTRODUCTION
+
+[@acka2019a]
+
+# METHODS
+
+Sediment sampling was performed during three cruises with R/V Kronprins Haakon in 2018 and 2019 (Table 1). Sediment cores with 40 cm length (40x10 cm) were retrieved at nine stations (NPAL04 to NPAL19) with a four-tube multicorer and immediately sliced to 1 cm layers, placed into plastic jars and frozen on board. Twenty-eight cores with 6 cm length (6x5 cm) cores were subsampled from a box corer at six stations (P1 to SICE4) and immediately sliced to 1 cm layers, placed into plastic jars and frozen on board. In the laboratory all samples were freeze-dried under vacuum and homogenized for stable isotopes and organic carbon content analysis.
+
+## Study Area
+
+We worked in a **beautiful** place with lots of trees, like *Quercus suber* and *Laurus nobilis*.
+
+## Data collection and analysis
+
+```{r Table-coords}
+coord_nansen_print <- read_xlsx("C:/Users/thaiser/OneDrive - Universitetet i Oslo/PhD/maps/dados/coordinates.xlsx", sheet = 4)
+set_flextable_defaults(
+  font.family = "Arial", 
+  font.size = 9,
+  font.color = "black",
+  table.layout = "fixed",
+  digits = 1,
+  theme_fun = "theme_booktabs"
+  )
+ft <- flextable(coord_nansen_print)
+ft 
+```
+
+We applied a linear model where
+
+$$
+y_{i} = \alpha + \beta*x_{i} 
+$$
+
+```{r model, eval = FALSE}
+model <- lm(y ~ x)
+```
+
+.
+
+# RESULTS
+
+Trees in forest *A* grew taller than those in forest *B* (mean height: `r mean(25, 31, 28)` versus `r mean(13, 19, 16)` m).
+
+And many more cool results that get updated dynamically, e.g. see Table \@ref(tab:Table-mtcars) and Fig. \@ref(fig:scatterplot). Note Tables and Figures are cross-linked and numbered automatically.
+
+```{r Table-Iris}
+flextable(head(iris))
+```
+
+```{r scatterplot, fig.cap="Just my first figure with a very fantastic caption."}
+x <- rnorm(100)
+y <- jitter(x, 1000)
+plot(x, y)
+```
+
+# DISCUSSION
+
+Discuss.
+
+# CONCLUSIONS
+
+Wrap up
+
+# ACKNOWLEDGEMENTS
+
+On the shoulders of giants.
+
+# REFERENCES
+
+::: {#refs}
+:::
+
+###### Supplementary Table (on new page)
+
+```{r Table-mtcars}
+kable(mtcars[10:16, ], caption = "Now a subset of mtcars dataset.")
+```
+
+###### Supplementary Figure (on new page)
+
+```{r Fig-landscape, fig.cap="A boxplot."}
+a <- sort(rnorm(100))
+b <- c(rep("Group Small", 35), rep("Group Big", 65))
+boxplot(a ~ b)
+```
+
+```{r sessioninfo, eval = FALSE}
+# set eval = FALSE if you don't want this info (useful for reproducibility) to appear 
+sessionInfo()
+# sessioninfo::session_info()
+```
