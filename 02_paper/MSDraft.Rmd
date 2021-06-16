@@ -57,7 +57,7 @@ opts_chunk$set(fig.path = "../03_figures/", dpi = 300)
 
 # INTRODUCTION
 
-[@acka2019a]
+Citation here [@acka2019a]
 
 # METHODS
 
@@ -92,8 +92,6 @@ $$
 ```{r model, eval = FALSE}
 model <- lm(y ~ x)
 ```
-
-.
 
 # RESULTS
 

@@ -39,7 +39,7 @@ Write your abstract here.
 
 # INTRODUCTION
 
-[@acka2019a]
+Citation here [@acka2019a]
 
 # METHODS
 
@@ -63,8 +63,6 @@ y_{i} = \alpha + \beta*x_{i}
 $$
 
 
-
-.
 
 # RESULTS
 
