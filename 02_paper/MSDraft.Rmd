@@ -57,19 +57,23 @@ opts_chunk$set(fig.path = "../03_figures/", dpi = 300)
 
 # INTRODUCTION
 
-Citation here [@acka2019a]
+-   Overall importance of Barents Sea in terms of carbon sink and carbon accumulation.
+
+-   What has been documented on carbon accumulation, and carbon sources in the region.
+
+-   "Few studies have paid attention to the origin of the OM in the studied area from the vertical perspective of time" `Não que seja vdd para a regiao, mas é um ponto de partida.`
+
+-   What knowledge gaps about seasonal / bathymetry related changes in sedimentation etc.
+
+-   Our hypothesis / our goal is to investigate environmental pressures on TOC and it's potential sources. And how the pressures may influence storage capacity on these ecosystems in a temporal perspective.
 
 # METHODS
 
+## Study area and sampling
+
 Sediment sampling was performed during three cruises with R/V Kronprins Haakon in 2018 and 2019 (Table 1). Sediment cores with 40 cm length (40x10 cm) were retrieved at nine stations (NPAL04 to NPAL19) with a four-tube multicorer and immediately sliced to 1 cm layers, placed into plastic jars and frozen on board. Twenty-eight cores with 6 cm length (6x5 cm) cores were subsampled from a box corer at six stations (P1 to SICE4) and immediately sliced to 1 cm layers, placed into plastic jars and frozen on board. In the laboratory all samples were freeze-dried under vacuum and homogenized for stable isotopes and organic carbon content analysis.
 
-## Study Area
-
-We worked in a **beautiful** place with lots of trees, like *Quercus suber* and *Laurus nobilis*.
-
-## Data collection and analysis
-
-```{r Table-coords}
+```{r table-coords}
 coord_nansen_print <- read_xlsx("C:/Users/thaiser/OneDrive - Universitetet i Oslo/PhD/maps/dados/coordinates.xlsx", sheet = 4)
 set_flextable_defaults(
   font.family = "Arial", 
@@ -83,21 +87,41 @@ ft <- flextable(coord_nansen_print)
 ft 
 ```
 
+## Age determination
+
+We worked in a **beautiful** place with lots of trees, like *Quercus suber* and *Laurus nobilis*.
+
+## Bulk geochemistry analyses
+
+bulk analyses
+
+## Characterization of sedimentary OM
+
 We applied a linear model where
 
 $$
-y_{i} = \alpha + \beta*x_{i} 
+OC_{terr}(\%) = \left(\frac{\delta^{13}Ci - \delta^{13}CM}{\delta^{13}CT - \delta^{13}CM}\right) * 100
 $$
 
 ```{r model, eval = FALSE}
 model <- lm(y ~ x)
 ```
 
+## Statistical methods
+
+-   Shapiro - Wilk Normality test
+
+-   Kruskal wallis analysis of variance among regions, environmental conditions, sedimentary environments
+
+-   Latitude relationship with parameters with linear regression or other family (glm)
+
+-   Temporal trend (Mann-Kendall, Pettit, Sen slope estimator)
+
 # RESULTS
 
 Trees in forest *A* grew taller than those in forest *B* (mean height: `r mean(25, 31, 28)` versus `r mean(13, 19, 16)` m).
 
-And many more cool results that get updated dynamically, e.g. see Table \@ref(tab:Table-mtcars) and Fig. \@ref(fig:scatterplot). Note Tables and Figures are cross-linked and numbered automatically.
+And many more cool results that get updated dynamically, e.g. see Table and Fig. \@ref(fig:scatterplot). Note Tables and Figures are cross-linked and numbered automatically.
 
 ```{r Table-Iris}
 flextable(head(iris))
@@ -128,7 +152,7 @@ On the shoulders of giants.
 
 ###### Supplementary Table (on new page)
 
-```{r Table-mtcars}
+```{r table-sup}
 kable(mtcars[10:16, ], caption = "Now a subset of mtcars dataset.")
 ```
 
