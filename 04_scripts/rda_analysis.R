@@ -464,6 +464,8 @@ env_f <- env_total %>%
              campaign == 'SSQ1')) %>%
   select((1:9), 
          -group, 
+         -slice,
+         -depth,
          land_distance, 
          clay,
          silt,
@@ -484,3 +486,8 @@ env_f <- env_total %>%
 
 ## bind all data ----------
 rda_final <- bind_cols(env_f,dep_f, spatial)
+
+write.table(rda_final,
+            file="rda_data_final.csv", dec = ",",
+            append=FALSE, sep= ";", row.names = FALSE, col.names=TRUE)
+
