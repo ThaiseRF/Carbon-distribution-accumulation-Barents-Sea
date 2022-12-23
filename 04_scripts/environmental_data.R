@@ -1,5 +1,4 @@
 # Drivers of organic carbon distribution and accumulation in the northern Barents Sea
-# Adapted from 'Numerical Ecology with R' Borcard, Gillet and Legendre 2018
 # Thaise Ricardo de Freitas
 # 20 December 2022
 
