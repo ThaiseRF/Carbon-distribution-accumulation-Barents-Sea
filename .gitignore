@@ -5,6 +5,17 @@
 # Session Data files
 .RData
 
+# Folders other than script
+01_data
+02_paper
+03_figures
+05_drafts
+
+# EPS, PDF and AF produced figures
+03_figures/*.eps
+03_figures/*.pdf
+03_figures/*.afdesign
+
 # User-specific files
 .Ruserdata
 
