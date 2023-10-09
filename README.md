@@ -8,7 +8,7 @@ The datasets generated and analysed were partially included in the Supplementary
 
 -   Part of the environmental data used in `rda_analysis.rda` is publicly available:
 
-Feldman, G. C., and McClain, C. (2010). "Chlorophyll A concentration" from Bio-ORACLE Dataset at <http://oceancolor.gsfc.nasa.gov/>. Compiled in: Basher, Z., Bowden, D. A., Costello, M. J., 2019. Global Marine Environment Datasets (GMED). Available at: <http://gmed.auckland.ac.nz> [Accessed February 24, 2022].
+Vader, Anna (2022). Chlorophyll A and phaeopigments Nansen Legacy. doi: https://doi.org/10.21335/NMDC-1371694848
 
 Fetterer, F., Knowles, K., Meier, W. N., Savoie, M., and Windnagel, A. K. (2017). Sea Ice Index, Version 3. doi: [10.7265/N5K072F8](https://doi.org/10.7265/N5K072F8).
 
