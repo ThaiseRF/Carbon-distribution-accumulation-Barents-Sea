@@ -2,7 +2,8 @@
 
 Code to reproduce figures and analysis of the publication:
 
-**Ricardo de Freitas, T., Hess, S., Renaud, P.E., Appleby, P. and Alve, E. Drivers of organic carbon distribution and accumulation in the northern Barents Sea. Frontiers in Marine Science (under review) (2023).**
+**Ricardo de Freitas, T., Hess, S., Renaud, P. E., Appleby, P., and Alve, E. (2024). Drivers of organic carbon distribution and accumulation in the northern Barents Sea. Prog. Oceanogr., 103286. doi: 10.1016/j.pocean.2024.103286
+**
 
 The datasets generated and analysed were partially included in the Supplementary Material, and deposited in the Norwegian Marine Data Centre (NMDC). This data is publicly available and can be found here: <https://doi.org/10.21335/NMDC-1821375519>, <https://doi.org/10.21335/NMDC-350572235>, <https://doi.org/10.21335/NMDC-490057692>, <https://doi.org/10.21335/NMDC-799257283>.
 
